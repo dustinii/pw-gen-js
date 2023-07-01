@@ -49,7 +49,7 @@ const getPasswordOptions = () => {
   return passwordOptions;
 };
 
-var generateBtn = document.querySelector("#generate");
+const generateBtn = document.querySelector('#generate');
 
 // Write password to the #password input
 function writePassword() {
