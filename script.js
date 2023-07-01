@@ -15,6 +15,39 @@ const getRandom = (arr) => {
   return arr[randIndex];
 };
 
+const getPasswordOptions = () => {
+  let length = parseInt(prompt('How many characters would you like your password to contain?'), 10);
+
+  // DUSTIN, put in try catch block later to handle errors properly
+  const checkLength = (limit, message) => {
+    if (length === limit) {
+      alert(message);
+      return false;
+    }
+    return true;
+  };
+
+  if (Number.isNaN(length) || !checkLength(8, 'Password length must be at least 8 characters') || !checkLength(128, 'Password length must less than 129 characters')) {
+    return null;
+  }
+
+  // Store user preferences in an object
+  let passwordOptions = {
+    length,
+    hasSpecialCharacters: confirm('Click OK if you want to include special characters.'),
+    hasNumericCharacters: confirm('Click OK if you want to include numeric characters.'),
+    hasLowerCasedCharacters: confirm('Click OK if you want to include lowercase characters.'),
+    hasUpperCasedCharacters: confirm('Click OK OK if you want to include uppercase characters.'),
+  };
+
+  // Check if user selected at least one character type
+  if (Object.values(passwordOptions).slice(1).every(option => option === false)) {
+    alert('Must select at least one character type');
+    return null;
+  }
+
+  return passwordOptions;
+};
 
 var generateBtn = document.querySelector("#generate");
 
