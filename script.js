@@ -49,16 +49,23 @@ const getPasswordOptions = () => {
   return passwordOptions;
 };
 
+const generatePassword = () => {
+  const options = getPasswordOptions();
+  let result = [];
+
+  let possibleCharacters = [];
+  let guaranteedCharacters = [];
+
+];
+
 const generateBtn = document.querySelector('#generate');
 
 // Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
+const writePassword = () => {
+  const password = generatePassword();
+  const passwordText = document.querySelector('#password');
   passwordText.value = password;
-
-}
+};
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
