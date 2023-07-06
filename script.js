@@ -27,14 +27,14 @@ const getPasswordOptions = () => {
     return true;
   };
 
-  if (Number.isNaN(length) || !checkLength(8, 'Password length must be at least 8 characters') || !checkLength(128, 'Password length must less than 129 characters')) {
+  if (Number.isNaN(length) || !checkLength(7, 'Password length must be at least 8 characters') || !checkLength(128, 'Password length must less than 129 characters')) {
     return null;
   }
 
   // Store user preferences in an object
   let passwordOptions = {
     length,
-    hasSpecialCharacters: confirm('Click OK if you want to include special characters.'),
+    hasSpecialCharacters: confirm('Click OK if you want to include special characters. If not, click Cancel.'),
     hasNumericCharacters: confirm('Click OK if you want to include numeric characters.'),
     hasLowerCasedCharacters: confirm('Click OK if you want to include lowercase characters.'),
     hasUpperCasedCharacters: confirm('Click OK OK if you want to include uppercase characters.'),
@@ -87,7 +87,7 @@ const generatePassword = () => {
     result[i] = guaranteedCharacters[i];
   }
   return result.join('');
-];
+};
 
 const generateBtn = document.querySelector('#generate');
 

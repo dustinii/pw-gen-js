@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 *,
 *::before,
 *::after {
@@ -10,11 +12,8 @@ body,
   height: 100%;
   margin: 0;
   padding: 0;
-}
-
-body {
-  font-family: sans-serif;
-  background-color: #f9fbfd;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f4f6f8;
 }
 
 .wrapper {
@@ -27,19 +26,20 @@ header {
   text-align: center;
   padding: 20px;
   padding-top: 0px;
-  color: hsl(206, 17%, 28%);
+  color: #1a202c;
 }
 
 .card {
-  background-color: hsl(0, 0%, 100%);
-  border-radius: 5px;
+  background-color: #ffffff;
+  border-radius: 15px;
   border-width: 1px;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
-  color: hsl(206, 17%, 28%);
+  box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.1);
+  color: #1a202c;
   font-size: 18px;
   margin: 0 auto;
   max-width: 800px;
   padding: 30px 40px;
+  margin-bottom: 30px;
 }
 
 .card-header::after {
@@ -74,18 +74,27 @@ header {
 
 .btn {
   border: none;
-  background-color: hsl(360, 91%, 36%);
-  border-radius: 25px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
-    0px;
+  background: linear-gradient(45deg, hsl(360, 91%, 36%), hsl(40, 90%, 60%));
+  border-radius: 50px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   color: hsl(0, 0%, 100%);
   display: inline-block;
   font-size: 22px;
   line-height: 22px;
   margin: 16px 16px 16px 20px;
-  padding: 14px 34px;
+  padding: 20px 40px;
   text-align: center;
   cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  transform: translateY(-3px);
+}
+
+.btn:active {
+  transform: translateY(1px);
 }
 
 button[disabled] {
@@ -104,10 +113,7 @@ button[disabled] {
   border: none;
   display: block;
   width: 100%;
-  padding-top: 15px;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-bottom: 85px;
+  padding: 15px;
   font-size: 1.2rem;
   text-align: center;
   margin-top: 10px;
