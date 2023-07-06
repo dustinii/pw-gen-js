@@ -55,7 +55,38 @@ const generatePassword = () => {
 
   let possibleCharacters = [];
   let guaranteedCharacters = [];
+  
+    if (!options) return null;
 
+  if (options.hasSpecialCharacters) {
+    possibleCharacters = [...possibleCharacters, ...specialCharacters];
+    guaranteedCharacters.push(getRandom(specialCharacters));
+  }
+
+  if (options.hasNumericCharacters) {
+    possibleCharacters = [...possibleCharacters, ...numericCharacters];
+    guaranteedCharacters.push(getRandom(numericCharacters));
+  }
+
+  if (options.hasLowerCasedCharacters) {
+    possibleCharacters = [...possibleCharacters, ...lowerCasedCharacters];
+    guaranteedCharacters.push(getRandom(lowerCasedCharacters));
+  }
+
+  if (options.hasUpperCasedCharacters) {
+    possibleCharacters = [...possibleCharacters, ...upperCasedCharacters];
+    guaranteedCharacters.push(getRandom(upperCasedCharacters));
+  }
+
+  for (let i = 0; i < options.length; i++) {
+    let possibleCharacter = getRandom(possibleCharacters);
+    result.push(possibleCharacter);
+  }
+
+  for (let i = 0; i < guaranteedCharacters.length; i++) {
+    result[i] = guaranteedCharacters[i];
+  }
+  return result.join('');
 ];
 
 const generateBtn = document.querySelector('#generate');
