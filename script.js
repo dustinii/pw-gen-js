@@ -18,7 +18,6 @@ const getRandom = (arr) => {
 const getPasswordOptions = () => {
   let length = parseInt(prompt('How many characters would you like your password to contain?'), 10);
 
-  // DUSTIN, put in try catch block later to handle errors properly
   const checkLength = (limit, message) => {
     if (length === limit) {
       alert(message);
