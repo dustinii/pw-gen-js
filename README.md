@@ -40,9 +40,11 @@ $ git clone https://github.com/dustinii/pw-gen-js.git
 
 ## Screenshot
 
-
+![Alt text](image.png)
 
 ## Deployed Application
+
+The Password Generator is deployed at https://dustinii.github.io/pw-gen-js/.
 
 ## License
 

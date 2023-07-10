@@ -13,7 +13,8 @@ body,
   margin: 0;
   padding: 0;
   font-family: 'Roboto', sans-serif;
-  background-color: #f4f6f8;
+  background-color: #282828;
+  color: #f4f6f8;
 }
 
 .wrapper {
@@ -26,15 +27,19 @@ header {
   text-align: center;
   padding: 20px;
   padding-top: 0px;
-  color: #1a202c;
+  color: #d1d1d1;
+}
+
+h2 {
+  text-align: center;
 }
 
 .card {
-  background-color: #ffffff;
+  background-color: #333333;
   border-radius: 15px;
   border-width: 1px;
-  box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.1);
-  color: #1a202c;
+  box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.3);
+  color: #d1d1d1;
   font-size: 18px;
   margin: 0 auto;
   max-width: 800px;
@@ -42,11 +47,12 @@ header {
   margin-bottom: 30px;
 }
 
-.card-header::after {
+.card-header::after,
+.card-footer::before {
   content: " ";
   display: block;
   width: 100%;
-  background: #e7e9eb;
+  background: #4f4f4f;
   height: 2px;
 }
 
@@ -58,14 +64,6 @@ header {
   text-align: center;
 }
 
-.card-footer::before {
-  content: " ";
-  display: block;
-  width: 100%;
-  background: #e7e9eb;
-  height: 2px;
-}
-
 .card-footer::after {
   content: " ";
   display: block;
@@ -74,9 +72,9 @@ header {
 
 .btn {
   border: none;
-  background: linear-gradient(45deg, hsl(360, 91%, 36%), hsl(40, 90%, 60%));
+  background: linear-gradient(45deg, hsl(210, 91%, 36%), hsl(210, 90%, 60%));
   border-radius: 50px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
   color: hsl(0, 0%, 100%);
   display: inline-block;
   font-size: 22px;
@@ -89,7 +87,7 @@ header {
 }
 
 .btn:hover {
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
   transform: translateY(-3px);
 }
 
@@ -99,11 +97,7 @@ header {
 
 button[disabled] {
   cursor: default;
-  background: #c0c7cf;
-}
-
-.float-right {
-  float: right;
+  background: #4f4f4f;
 }
 
 #password {
@@ -118,8 +112,10 @@ button[disabled] {
   text-align: center;
   margin-top: 10px;
   margin-bottom: 10px;
-  border: 2px dashed #c0c7cf;
+  border: 2px dashed #4f4f4f;
   border-radius: 6px;
+  color: #d1d1d1;
+  background: #282828;
   resize: none;
   overflow: hidden;
 }
