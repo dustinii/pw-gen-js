@@ -18,17 +18,17 @@ const getRandom = (arr) => {
 const getPasswordOptions = () => {
   let length = parseInt(prompt('How many characters would you like your password to contain?'), 10);
 
-  const checkLength = (limit, message) => {
-    if (length === limit) {
-      alert(message);
-      return false;
-    }
-    return true;
-  };
-
-  if (Number.isNaN(length) || !checkLength(7, 'Password length must be at least 8 characters') || !checkLength(128, 'Password length must less than 129 characters')) {
+  if (Number.isNaN(length)) {
+    alert('Password length must be a number');
+    return null;
+  } else if (length < 8) {
+    alert('Password length must be at least 8 characters');
+    return null;
+  } else if (length > 128) {
+    alert('Password length must be less than or equal to 128 characters');
     return null;
   }
+
 
   // Store user preferences in an object
   let passwordOptions = {
